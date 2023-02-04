@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string('prefecture', 255);
             $table->string('area', 255);
             $table->string('address', 255);
-            $table->string('category', 255);
+            $table->integer('category');
             $table->string('body', 255);
             $table->string('info', 255)->nullable();
             $table->string('instagram', 255)->nullable();
