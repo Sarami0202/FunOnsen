@@ -40,7 +40,7 @@ class OnsenController extends Controller
             'area' => $request->area,
             'address' => $request->address,
             'category' => $request->category,
-            'category_name' => $request->category_name,
+            'categoryname' => $request->categoryname,
             'body' => $request->body,
             'info' => $request->info,
             'instagram' => $request->instagram,
