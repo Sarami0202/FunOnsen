@@ -17,7 +17,8 @@ class VoteController extends Controller
     {
         if ($id == "all")
             return $this->JsonResponse(vote::all());
-
+        else
+            return $this->JsonResponse(vote::where('id', $id)->get());
     }
 
     public function check(Request $request)
