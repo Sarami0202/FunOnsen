@@ -92,6 +92,11 @@ class OnsenController extends Controller
                     $d_path[$index] = isset($img) ? $img->store('thumbnail', 'public') : '';
                 }
             }
+            $m_path = null;
+            if ($request['main'] != null) {
+                $main_file = $request->file('main');
+                $m_path = isset($main_file) ? $main_file->store('thumbnail', 'public') : null;
+            }
             onsen::where('id', $id)->update([
                 'name' => $request->name,
                 'region' => $request->region,
@@ -105,12 +110,12 @@ class OnsenController extends Controller
                 'twitter' => $request->twitter,
                 'facebook' => $request->facebook,
                 'youtube' => $request->youtube,
-                'thumbnail1' => $d_path[0],
-                'thumbnail2' => $d_path[1],
-                'thumbnail3' => $d_path[2],
-                'thumbnail4' => $d_path[3],
-                'thumbnail5' => $d_path[4],
-                'thumbnail6' => $d_path[5],
+                'thumbnail1' => $m_path,
+                'thumbnail2' => $d_path[0],
+                'thumbnail3' => $d_path[1],
+                'thumbnail4' => $d_path[2],
+                'thumbnail5' => $d_path[3],
+                'thumbnail6' => $d_path[4],
             ]);
         } else {
             onsen::where('id', $id)->update([
