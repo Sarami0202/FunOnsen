@@ -25,12 +25,17 @@ class OnsenController extends Controller
      */
     public function store(Request $request)
     {
-        $d_path = array(null, null, null, null, null, null, );
+        $d_path = array(null, null, null, null, null, );
         if ($request['thumbnail'] != null) {
             $thumbnail_file = $request->file('thumbnail');
             foreach ($thumbnail_file as $index => $img) {
-                $d_path[$index] = isset($img) ? $img->store('thumbnail', 'public') : '';
+                $d_path[$index] = isset($img) ? $img->store('thumbnail', 'public') : null;
             }
+        }
+        $m_path = null;
+        if ($request['main'] != null) {
+            $main_file = $request->file('main');
+            $m_path = isset($main_file) ? $main_file->store('thumbnail', 'public') : null;
         }
 
         onsen::insert([
@@ -47,12 +52,14 @@ class OnsenController extends Controller
             'twitter' => $request->twitter,
             'facebook' => $request->facebook,
             'youtube' => $request->youtube,
-            'thumbnail1' => $d_path[0],
-            'thumbnail2' => $d_path[1],
-            'thumbnail3' => $d_path[2],
-            'thumbnail4' => $d_path[3],
-            'thumbnail5' => $d_path[4],
-            'thumbnail6' => $d_path[5],
+            'google' => $request->google,
+            'tiktok' => $request->tiktok,
+            'thumbnail1' => $m_path,
+            'thumbnail2' => $d_path[0],
+            'thumbnail3' => $d_path[1],
+            'thumbnail4' => $d_path[2],
+            'thumbnail5' => $d_path[3],
+            'thumbnail6' => $d_path[4],
         ]);
 
     }

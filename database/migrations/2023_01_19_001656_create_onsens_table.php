@@ -27,6 +27,8 @@ return new class extends Migration {
             $table->string('twitter', 255)->nullable();
             $table->string('youtube', 255)->nullable();
             $table->string('facebook', 255)->nullable();
+            $table->string('tiktok', 255)->nullable();
+            $table->string('google', 255)->nullable();
             $table->string('thumbnail1')->nullable();
             $table->string('thumbnail2')->nullable();
             $table->string('thumbnail3')->nullable();
