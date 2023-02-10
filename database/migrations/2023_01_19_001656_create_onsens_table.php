@@ -21,8 +21,8 @@ return new class extends Migration {
             $table->string('address', 255);
             $table->string('category', 255);
             $table->string('categoryname', 255);
-            $table->string('body');
-            $table->string('html');
+            $table->text('body');
+            $table->text('html');
             $table->string('instagram', 255)->nullable();
             $table->string('twitter', 255)->nullable();
             $table->string('youtube', 255)->nullable();
