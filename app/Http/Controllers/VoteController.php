@@ -23,7 +23,7 @@ class VoteController extends Controller
 
     public function check(Request $request)
     {
-        return $this->JsonResponse(vote::where('date', $request["date"])->where('ip', $request["ip"])->where('ua', $request["ua"])->get());
+        return $this->JsonResponse(vote::where('ip', $request["ip"])->where('ua', $request["ua"])->get());
     }
 
     /**
