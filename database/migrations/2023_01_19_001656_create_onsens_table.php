@@ -23,12 +23,12 @@ return new class extends Migration {
             $table->string('categoryname', 255);
             $table->text('body');
             $table->text('html');
-            $table->string('instagram', 255)->nullable();
-            $table->string('twitter', 255)->nullable();
-            $table->string('youtube', 255)->nullable();
-            $table->string('facebook', 255)->nullable();
-            $table->string('tiktok', 255)->nullable();
-            $table->string('google', 255)->nullable();
+            $table->text('instagram')->nullable();
+            $table->text('twitter')->nullable();
+            $table->text('youtube')->nullable();
+            $table->text('facebook')->nullable();
+            $table->text('tiktok')->nullable();
+            $table->text('google')->nullable();
             $table->text('info1')->nullable();
             $table->string('label1')->nullable();
             $table->text('info2')->nullable();
