@@ -73,6 +73,7 @@ class OnsenController extends Controller
                 'thumbnail4' => $d_path[2],
                 'thumbnail5' => $d_path[3],
                 'thumbnail6' => $d_path[4],
+                'vote' => $request->vote,
             ]);
             return (1);
         } else
@@ -144,6 +145,7 @@ class OnsenController extends Controller
                 'thumbnail4' => $d_path[2],
                 'thumbnail5' => $d_path[3],
                 'thumbnail6' => $d_path[4],
+                'vote' => $request->vote,
             ]);
         } else {
             onsen::where('id', $id)->update([
@@ -171,6 +173,7 @@ class OnsenController extends Controller
                 'label4' => $request->label4,
                 'info5' => $request->info5,
                 'label5' => $request->label5,
+                'vote' => $request->vote,
             ]);
         }
     }
